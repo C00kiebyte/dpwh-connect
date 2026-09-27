@@ -4,8 +4,8 @@ type Props = {
 
 export default function RouteHeader({ label }: Props) {
   return (
-    <div className="p-5 absolute top-0 w-full">
-      <h1 className="text-xl font-bold backdrop-blur-xl">{label}</h1>
+    <div className="sticky top-0 w-full p-5 backdrop-blur-xl z-10">
+      <h1 className="text-xl font-bold">{label}</h1>
     </div>
   );
 }
