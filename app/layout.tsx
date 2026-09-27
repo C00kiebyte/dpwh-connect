@@ -23,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex justify-between bg-zinc-100">
         <SidebarLeft />
-        <main>{children}</main>
+        <main className="w-full max-w-200">{children}</main>
         <section className="w-80 h-dvh"></section>
       </body>
     </html>
