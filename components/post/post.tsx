@@ -9,7 +9,7 @@ type Props = {
   handle: string;
   time: string;
   contentText: string;
-  contentImageSrc: string;
+  contentImageSrc?: string;
   likes: number;
   dislikes: number;
   comments: number;
@@ -37,7 +37,7 @@ export function Post(props: Props) {
       </CardHeader>
       <CardContent className="space-y-3">
         <p>{contentText}</p>
-        <PostImage url={contentImageSrc} />
+        {contentImageSrc && <PostImage url={contentImageSrc} />}
       </CardContent>
       <CardFooter className="flex justify-between text-zinc-500">
         <PostReacts like={likes} dislike={dislikes} />
