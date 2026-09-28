@@ -49,7 +49,7 @@ const feeds = [
 export default function Home() {
   return (
     <div className="relative w-full h-full border-x space-y-4">
-      <RouteHeader label="Latest Updates" />
+      <RouteHeader label="Latest Updates" className="max-lg:hidden" />
       <CreatePostWidget />
       {feeds.map((feed) => (
         <Post

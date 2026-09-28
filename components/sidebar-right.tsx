@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function SidebarRight() {
   return (
-    <aside className="sticky top-0 w-80 h-dvh pr-10 py-5 space-y-8 shrink-0">
+    <aside className="sticky top-0 w-80 h-dvh pr-10 py-5 space-y-8 shrink-0 max-xl:hidden overflow-scroll">
       <InputGroup className="bg-white shadow rounded-full px-1 py-5 focus-within:border-indigo-900 focus-within:border">
         <InputGroupInput placeholder="Search projects, locations, people" />
         <InputGroupAddon>

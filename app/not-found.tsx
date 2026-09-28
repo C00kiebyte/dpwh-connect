@@ -2,7 +2,7 @@ import { GhostIcon } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="flex items-center justify-center w-full h-dvh">
+    <div className="flex items-center justify-center w-full h-full max-lg:pt-50">
       <div className="flex items-center justify-center gap-3 -mt-20">
         <GhostIcon className="size-12" />
         <div>

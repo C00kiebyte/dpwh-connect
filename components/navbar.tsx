@@ -21,7 +21,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col gap-1">
+    <nav className="flex lg:flex-col gap-1 max-lg:justify-around w-full">
       {routes.map((route) => (
         <Link href={route.route} key={route.route}>
           <Button
@@ -29,7 +29,7 @@ export default function Navbar() {
             className={cn(pathname === route.route && "shadow text-indigo-950 hover:bg-background", BUTTON_STYLE)}
           >
             {route.icon}
-            {route.label}
+            <div className="max-lg:hidden">{route.label}</div>
           </Button>
         </Link>
       ))}

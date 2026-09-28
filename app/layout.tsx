@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex justify-between bg-zinc-100 gap-5">
+      <body className="min-h-full flex justify-between bg-zinc-100 gap-5 max-lg:flex-col">
         <SidebarLeft />
-        <main className="w-full max-w-200 min-h-dvh shrink-0">{children}</main>
+        <main className="w-full lg:max-w-200 min-h-dvh shrink overflow-hidden max-lg:py-20">{children}</main>
         <SidebarRight />
       </body>
     </html>
