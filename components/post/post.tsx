@@ -1,37 +1,48 @@
-import PostImage from "./post-image";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import { PostComments, PostReacts, PostSave, PostShare } from "./post-actions";
+import PostImage from "./post-image";
 
-export default function Post() {
+type Props = {
+  avatarSrc: string;
+  username: string;
+  handle: string;
+  time: string;
+  contentText: string;
+  contentImageSrc: string;
+  likes: number;
+  dislikes: number;
+  comments: number;
+  shares: number;
+};
+
+export function Post(props: Props) {
+  const { avatarSrc, username, handle, time, contentText, contentImageSrc, likes, dislikes, comments, shares } = props;
+
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-3">
           <Avatar className="size-11">
-            <AvatarImage src="https://placehold.net/5.png" alt="dpwh" />
-            <AvatarFallback>DH</AvatarFallback>
+            <AvatarImage src={avatarSrc} alt={handle} />
+            <AvatarFallback>{username[0].toUpperCase()}</AvatarFallback>
           </Avatar>
           <div>
-            <h5 className="font-semibold">DPWH Official</h5>
+            <h5 className="font-semibold">{username}</h5>
             <div className="flex items-center gap-2 text-zinc-500 font-normal">
-              <small>@DPWHph</small> • <small>2h</small>
+              <small>{handle}</small> • <small>{time}</small>
             </div>
           </div>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
-        <p className="text-base">
-          🎉 PROJECT UPDATE: The NLEX-SLEX Connector Phase 2 is now 85% complete! This highly anticipated elevated
-          expressway will drastically reduce travel time between northern and southern Metro Manila. Great work to all
-          teams involved!
-        </p>
-        <PostImage url="https://picsum.photos/seed/picsum/720/720" />
+        <p>{contentText}</p>
+        <PostImage url={contentImageSrc} />
       </CardContent>
       <CardFooter className="flex justify-between text-zinc-500">
-        <PostReacts like={1245} dislike={350} />
-        <PostComments comments={520} />
-        <PostShare shares={25} />
+        <PostReacts like={likes} dislike={dislikes} />
+        <PostComments comments={comments} />
+        <PostShare shares={shares} />
         <PostSave />
       </CardFooter>
     </Card>
