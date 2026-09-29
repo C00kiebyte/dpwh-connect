@@ -121,7 +121,7 @@ export function PostSave({ className }: { className?: string }) {
     >
       <BookmarkIcon
         fill={saved ? "var(--color-amber-500)" : "none"}
-        className={ICON_STYLE}
+        className={cn(ICON_STYLE, "max-lg:size-4!")}
         strokeWidth={saved ? 0 : 2}
       />
     </Button>
