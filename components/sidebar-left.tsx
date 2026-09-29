@@ -28,7 +28,9 @@ export default function SidebarLeft() {
           <h2 className="text-xl font-bold text-indigo-950">DPWH Connect</h2>
         </header>
         <Navbar />
-        <Button className="text-lg font-semibold w-full p-6 rounded-full bg-indigo-900 shadow">Post Update</Button>
+        <Button className="text-lg font-semibold w-full p-6 rounded-full bg-indigo-900 shadow hover:bg-indigo-800">
+          Post Update
+        </Button>
       </aside>
     </>
   );
