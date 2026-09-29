@@ -39,7 +39,7 @@ export function PostReacts({ like, dislike }: PostReactProps) {
   };
 
   return (
-    <div>
+    <div className="flex flex-nowrap">
       <Button
         variant="ghost"
         className={cn(
