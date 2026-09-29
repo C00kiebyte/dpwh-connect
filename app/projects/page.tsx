@@ -11,8 +11,8 @@ export default function Home() {
     <div className="relative w-full h-full border-x">
       <RouteHeader label="Project Analytics Overview" className="max-lg:hidden" />
 
-      <div className="space-y-5">
-        <section className="grid grid-cols-2 gap-5 max-lg:grid-cols-2">
+      <div className="space-y-5 max-lg:space-y-2 max-lg:px-2">
+        <section className="grid grid-cols-2 gap-2 max-lg:grid-cols-2">
           <DataCard>
             <DataCardIcon className="text-indigo-900 bg-indigo-50">
               <HardHatIcon />
@@ -46,7 +46,7 @@ export default function Home() {
           </DataCard>
         </section>
 
-        <section className="flex gap-5 w-full max-lg:flex-wrap">
+        <section className="flex gap-2 w-full max-lg:flex-wrap">
           <StatusDistributionChart />
           <BudgetAllocationChart />
         </section>
