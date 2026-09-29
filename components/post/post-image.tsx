@@ -1,14 +1,16 @@
 "use client";
 
+import { cn } from "cn";
 import { FastAverageColor } from "fast-average-color";
 import Image from "next/image";
 import { useState } from "react";
 
 type Props = {
   url: string;
+  className?: string;
 };
 
-export default function PostImage({ url }: Props) {
+export default function PostImage({ url, className }: Props) {
   const [bgColor, setBgColor] = useState("#000000");
 
   const handeImageLoad = (event: any) => {
@@ -20,7 +22,7 @@ export default function PostImage({ url }: Props) {
 
   return (
     <div
-      className="overflow-hidden rounded-lg w-full h-100 bg-black flex justify-center items-center"
+      className={cn(className, "overflow-hidden rounded-lg w-full h-100 bg-black flex justify-center items-center")}
       style={{ backgroundColor: bgColor }}
     >
       <Image
