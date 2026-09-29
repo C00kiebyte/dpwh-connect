@@ -6,15 +6,52 @@ import { Button } from "./ui/button";
 import { BellIcon, HashIcon, HomeIcon, MapIcon, SettingsIcon, UserIcon } from "lucide-react";
 import { cn } from "cn";
 
-const BUTTON_STYLE = "text-lg px-4 py-7 w-full justify-start rounded-xl gap-5 font-light";
+const BUTTON_STYLE =
+  "text-lg px-4 py-7 w-full lg:justify-start rounded-xl gap-5 font-light max-lg:w-12 max-lg:h-12 max-lg:px-0 max-lg:py-0";
 
 const routes = [
-  { label: "Feed", route: "/", icon: <HomeIcon className="size-5" /> },
-  { label: "Map Explore", route: "/map", icon: <MapIcon className="size-5" /> },
-  { label: "Projects", route: "/projects", icon: <HashIcon className="size-5" /> },
-  { label: "Notifications", route: "/notifications", icon: <BellIcon className="size-5" /> },
-  { label: "Profile", route: "/profile", icon: <UserIcon className="size-5" />, hideMobile: true },
-  { label: "Settings", route: "/settings", icon: <SettingsIcon className="size-5" />, hideMobile: true },
+  {
+    label: "Feed",
+    route: "/",
+    icon: (path: string) => (
+      <HomeIcon className={cn("size-5 ", path === "/" && "max-lg:fill-indigo-900 max-lg:stroke-0")} />
+    ),
+  },
+  {
+    label: "Map Explore",
+    route: "/map",
+    icon: (path: string) => (
+      <MapIcon className={cn("size-5 ", path === "/map" && "max-lg:fill-indigo-900 max-lg:stroke-0")} />
+    ),
+  },
+  {
+    label: "Projects",
+    route: "/projects",
+    icon: (path: string) => <HashIcon className={cn("size-5 ", path === "/projects" && "max-lg:stroke-indigo-900")} />,
+  },
+  {
+    label: "Notifications",
+    route: "/notifications",
+    icon: (path: string) => (
+      <BellIcon className={cn("size-5 ", path === "/notifications" && "max-lg:fill-indigo-900 max-lg:stroke-0")} />
+    ),
+  },
+  {
+    label: "Profile",
+    route: "/profile",
+    icon: (path: string) => (
+      <UserIcon className={cn("size-5 ", path === "/profile" && "max-lg:fill-indigo-900 max-lg:stroke-0")} />
+    ),
+    hideMobile: true,
+  },
+  {
+    label: "Settings",
+    route: "/settings",
+    icon: (path: string) => (
+      <SettingsIcon className={cn("size-5 ", path === "/settings" && "max-lg:fill-indigo-900 max-lg:stroke-0")} />
+    ),
+    hideMobile: true,
+  },
 ];
 
 export default function Navbar() {
@@ -26,9 +63,12 @@ export default function Navbar() {
         <Link href={route.route} key={route.route} className={`max-lg:${route.hideMobile ? "hidden" : ""}`}>
           <Button
             variant={pathname === route.route ? "outline" : "ghost"}
-            className={cn(pathname === route.route && "shadow text-indigo-950 hover:bg-background", BUTTON_STYLE)}
+            className={cn(
+              pathname === route.route && "lg:shadow text-indigo-950 hover:bg-background max-lg:border-0 focus:ring-0",
+              BUTTON_STYLE,
+            )}
           >
-            {route.icon}
+            {route.icon(pathname)}
             <div className="max-lg:hidden">{route.label}</div>
           </Button>
         </Link>
