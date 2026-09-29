@@ -31,7 +31,14 @@ export default function BudgetAllocationChart() {
         <ChartContainer config={chartConfig}>
           <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
-            <XAxis dataKey="type" tickLine={false} tickMargin={10} axisLine={false} />
+            <XAxis
+              dataKey="type"
+              tickLine={false}
+              tickMargin={10}
+              axisLine={false}
+              interval={0}
+              tick={{ fontSize: 10 }}
+            />
             <YAxis dataKey="budget" tickLine={false} tickMargin={10} axisLine={false} />
             <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
             <Bar dataKey="budget" radius={8} fill="var(--color-indigo-800)" barSize={50} />

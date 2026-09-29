@@ -34,11 +34,11 @@ export function DataCardIcon({ children, className }: Props) {
 DataCardIcon.displayName = "DataCardIcon";
 
 export function DataCardLabel({ children, className }: Props) {
-  return <small className={cn(className, "text-zinc-500")}>{children}</small>;
+  return <small className={cn(className, "text-zinc-500 max-lg:text-xs")}>{children}</small>;
 }
 DataCardLabel.displayName = "DataCardLabel";
 
 export function DataCardValue({ children, className }: Props) {
-  return <p className={cn(className, "text-lg font-semibold")}>{children}</p>;
+  return <p className={cn(className, "text-lg font-semibold max-lg:text-sm")}>{children}</p>;
 }
 DataCardValue.displayName = "DataCardValue";
