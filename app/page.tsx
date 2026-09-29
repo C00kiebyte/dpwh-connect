@@ -173,7 +173,7 @@ export default function Home() {
     <div className="relative w-full h-full border-x">
       <RouteHeader label="Latest Updates" className="max-lg:hidden" />
       <CreatePostWidget />
-      <div className="mt-4 space-y-4">
+      <div className="mt-4 space-y-4 max-lg:mt-2 max-lg:space-y-2">
         {feeds.map((feed) => (
           <Post
             key={feed.id}

@@ -6,7 +6,7 @@ export default function MapExplorePage() {
   return (
     <div className="relative w-full h-full border-x">
       <RouteHeader label="Regional Heatmap" className="max-lg:hidden" />
-      <div className="w-full shadow border p-5 rounded-lg space-y-1 mb-4 bg-white">
+      <div className="w-full shadow border p-5 rounded-lg space-y-1 mb-4 max-lg:mb-2 bg-white">
         <div className="flex items-center gap-2">
           <MapPinIcon className="text-indigo-900" />
           <h6 className="font-semibold">Live Infrastructure Map</h6>
