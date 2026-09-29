@@ -11,19 +11,19 @@ const BUTTON_STYLE = "text-lg px-4 py-7 w-full justify-start rounded-xl gap-5 fo
 const routes = [
   { label: "Feed", route: "/", icon: <HomeIcon className="size-5" /> },
   { label: "Map Explore", route: "/map", icon: <MapIcon className="size-5" /> },
-  { label: "Notifications", route: "/notifications", icon: <BellIcon className="size-5" /> },
   { label: "Projects", route: "/projects", icon: <HashIcon className="size-5" /> },
-  { label: "Profile", route: "/profile", icon: <UserIcon className="size-5" /> },
-  { label: "Settings", route: "/settings", icon: <SettingsIcon className="size-5" /> },
+  { label: "Notifications", route: "/notifications", icon: <BellIcon className="size-5" /> },
+  { label: "Profile", route: "/profile", icon: <UserIcon className="size-5" />, hideMobile: true },
+  { label: "Settings", route: "/settings", icon: <SettingsIcon className="size-5" />, hideMobile: true },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex lg:flex-col gap-1 max-lg:justify-around w-full">
+    <nav className="flex lg:flex-col gap-1 max-lg:justify-around w-full max-lg:px-10">
       {routes.map((route) => (
-        <Link href={route.route} key={route.route}>
+        <Link href={route.route} key={route.route} className={`max-lg:${route.hideMobile ? "hidden" : ""}`}>
           <Button
             variant={pathname === route.route ? "outline" : "ghost"}
             className={cn(pathname === route.route && "shadow text-indigo-950 hover:bg-background", BUTTON_STYLE)}
