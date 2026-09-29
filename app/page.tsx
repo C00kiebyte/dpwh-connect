@@ -48,24 +48,26 @@ const feeds = [
 
 export default function Home() {
   return (
-    <div className="relative w-full h-full border-x space-y-4">
+    <div className="relative w-full h-full border-x">
       <RouteHeader label="Latest Updates" className="max-lg:hidden" />
       <CreatePostWidget />
-      {feeds.map((feed) => (
-        <Post
-          key={feed.id}
-          avatarSrc={feed.avatarSrc}
-          username={feed.username}
-          handle={feed.handle}
-          time={feed.time}
-          contentText={feed.contentText}
-          contentImageSrc={feed.contentImageSrc}
-          likes={feed.likes}
-          dislikes={feed.dislikes}
-          comments={feed.comments}
-          shares={feed.shares}
-        />
-      ))}
+      <div className="mt-4 space-y-4">
+        {feeds.map((feed) => (
+          <Post
+            key={feed.id}
+            avatarSrc={feed.avatarSrc}
+            username={feed.username}
+            handle={feed.handle}
+            time={feed.time}
+            contentText={feed.contentText}
+            contentImageSrc={feed.contentImageSrc}
+            likes={feed.likes}
+            dislikes={feed.dislikes}
+            comments={feed.comments}
+            shares={feed.shares}
+          />
+        ))}
+      </div>
     </div>
   );
 }
